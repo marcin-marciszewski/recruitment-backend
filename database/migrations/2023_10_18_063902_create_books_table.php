@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->string('issue_date');
+            $table->string('issue_year');
             $table->longText('description');
             $table->integer('stock');
+            $table->string('category');
             $table->timestamps();
         });
     }
