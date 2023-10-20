@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,24 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/posts', function (Request $request) {
-    return response()->json([
-        'posts' => [
-            'aa' => 'bbb'
-        ]
-    ]);
+// Public rountes
+// Books
+Route::get('/books', [BookApiController::class, 'index']);
+Route::get('/books/{id}', [BookApiController::class, 'show']);
+Route::get('/books/search/{value}', [BookApiController::class, 'search']);
+
+// Authentication
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+// Protected routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    // Books
+    Route::post('/books', [BookApiController::class, 'store']);
+    Route::put('/books/{id}', [BookApiController::class, 'update']);
+    Route::delete('/books/{id}', [BookApiController::class, 'destroy']);
+
+    // Authentication
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
+//
