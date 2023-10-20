@@ -38,3 +38,4 @@ npm install
 ```
 npm run build
 ```
+### Zarejestruj się żeby zobaczyć pełną funkcjonalność.
