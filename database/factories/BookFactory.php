@@ -22,7 +22,8 @@ class BookFactory extends Factory
             'issue_year' => $this->faker->dateTime()->format('Y'),
             'description' => $this->faker->paragraph(3),
             'stock' => $this->faker->numberBetween(0, 100),
-            'category' => $this->faker->randomElement(['literatura', 'historia', 'nauka']),
+            'user_id' => $this->faker->numberBetween(1, 10),
+            'category_id' => $this->faker->numberBetween(1, 5),
         ];
     }
 }
