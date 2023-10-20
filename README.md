@@ -16,7 +16,7 @@ docker-compose down --volumes
 ```
 
 ### Populacja bazy danych:
-##### Otwórz terminal kontenera (zastąp <recruitment-backend> na nazwe foldera głównego )
+##### Otwórz terminal kontenera (zastąp recruitment-backend na nazwe foldera głównego )
 #### 
 ```
 docker exec -it recruitment-backend-laravel.test-1 bash
