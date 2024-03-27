@@ -1,41 +1,41 @@
-### Instalacja
-##### W folderze głównym uruchom :
+### Instalation
+##### In root folder run :
 #### 
 ```
 composer install
 ```
-##### następnie:
+##### next:
 ####
 ```
 ./vendor/bin/sail up
 ```
-##### w razie problemów:
+##### in case of any issues:
 ####
 ```
 docker-compose down --volumes
 ```
 
-### Populacja bazy danych:
-##### Otwórz terminal kontenera (zastąp recruitment-backend na nazwe foldera głównego )
+### Database population:
+##### Open the container terminal (replace recruitment-backend with root folder name)
 #### 
 ```
 docker exec -it recruitment-backend-laravel.test-1 bash
 ```
-##### następnie:
+##### next:
 ####
 ```
 php artisan migrate --seed
 ```
 
-### Budowa frontedu
-##### W terminalu kontenera (po uruchomieniu docker exec -it recruitment-backend-laravel.test-1 bash)
+### Frontend build
+##### In container terminal ( after command: docker exec -it recruitment-backend-laravel.test-1 bash)
 #### 
 ```
 npm install
 ```
-##### następnie:
+##### next:
 ####
 ```
 npm run build
 ```
-### Zarejestruj się żeby zobaczyć pełną funkcjonalność.
+### Register an user for full functionality.
